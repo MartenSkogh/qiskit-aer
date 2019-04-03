@@ -50,7 +50,7 @@ else()
 endif()
 
 if(CYTHON_EXECUTABLE)
-  set(CYTHON_version_command ${CYTHON_EXECUTABLE} --version)
+  set(CYTHON_version_command /usr/bin/cython --version)
 
   execute_process(COMMAND ${CYTHON_version_command}
                   OUTPUT_VARIABLE CYTHON_version_output
