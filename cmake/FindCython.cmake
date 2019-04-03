@@ -50,7 +50,7 @@ else()
 endif()
 
 if(CYTHON_EXECUTABLE)
-  set(CYTHON_version_command /usr/bin/cython --version)
+  set(CYTHON_version_command "/usr/bin/cython --version")
 
   execute_process(COMMAND ${CYTHON_version_command}
                   OUTPUT_VARIABLE CYTHON_version_output
@@ -59,7 +59,7 @@ if(CYTHON_EXECUTABLE)
                   OUTPUT_STRIP_TRAILING_WHITESPACE)
 
   if(NOT ${CYTHON_version_result} EQUAL 0)
-    set(_error_msg "Command \"${CYTHON_version_command}\" failed with")
+    set(_error_msg "Command \"${CYTHON_version_command}\", for some reason, failed with")
     set(_error_msg "${_error_msg} output:\n${CYTHON_version_error}")
     message(SEND_ERROR "${_error_msg}")
   else()
